@@ -78,9 +78,11 @@
   .stat-row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
   .stat-row b{font-family:var(--head);font-weight:500}
   .stat-row span{color:var(--muted)}
-  .bar{height:8px;background:var(--deep);border-radius:99px;overflow:hidden}
-  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--brand-2));transform-origin:left;animation:fill 1.2s cubic-bezier(.2,.8,.2,1) both}
-  .stat:nth-child(3) .bar i{animation-delay:.1s}.stat:nth-child(4) .bar i{animation-delay:.2s}.stat:nth-child(5) .bar i{animation-delay:.3s}
+  .bar{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .bar i{position:relative;height:10px;background:var(--deep);border-radius:3px;overflow:hidden}
+  .bar i::after{content:"";position:absolute;inset:0;width:calc(var(--f,0)*100%);background:linear-gradient(90deg,var(--brand),var(--brand-2));transform-origin:left;animation:fill .35s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--s,0)*.12s + var(--r,0)*.08s)}
+  .bar i:nth-child(1){--s:0}.bar i:nth-child(2){--s:1}.bar i:nth-child(3){--s:2}.bar i:nth-child(4){--s:3}.bar i:nth-child(5){--s:4}
+  .stat:nth-child(3){--r:1}.stat:nth-child(4){--r:2}.stat:nth-child(5){--r:3}.stat:nth-child(6){--r:4}
   @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   .points{margin-top:24px;display:flex;align-items:center;justify-content:space-between;background:var(--deep);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--muted)}
   .points b{font-family:var(--head);color:var(--gold);font-size:16px}
@@ -268,10 +270,11 @@
     </div>
     <aside class="sheet" aria-label="Skill sheet">
       <div class="sheet-head"><span class="t"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">Your team, respecced</span><span class="lvl">LVL UP</span></div>
-      <div class="stat"><div class="stat-row"><b>Design leadership</b><span>+40%</span></div><div class="bar"><i style="width:88%"></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Scope &amp; milestones</b><span>+35%</span></div><div class="bar"><i style="width:76%"></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Team structure &amp; hiring</b><span>+30%</span></div><div class="bar"><i style="width:70%"></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Career momentum</b><span>+45%</span></div><div class="bar"><i style="width:92%"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Design leadership</b><span>+40%</span></div><div class="bar" role="img" aria-label="4 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Scope &amp; milestones</b><span>+35%</span></div><div class="bar" role="img" aria-label="3.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Team structure &amp; hiring</b><span>+30%</span></div><div class="bar" role="img" aria-label="3 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Career momentum</b><span>+45%</span></div><div class="bar" role="img" aria-label="4.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Academic advisory</b><span>+35%</span></div><div class="bar" role="img" aria-label="3.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i><i></i></div></div>
       <div class="points"><span>Skill points available</span><b>25+ years</b></div>
     </aside>
   </div>
@@ -280,8 +283,8 @@
 <div class="credits">
   <div class="wrap">
     <img class="mark" src="assets/logo/symbol/symbol.svg" alt="">
-    <span class="k">Credits include</span>
-    <ul><li>Starfield</li><li>Fallout 76</li><li>Battlefield 4</li><li>Killzone 3</li><li>Star Wars Battlefront II</li></ul>
+    <span class="k">Inventory loadout</span>
+    <ul><li>Starfield</li><li>Fallout 76</li><li>Battlefield 4</li><li>Killzone 3</li><li>Star Wars Battlefront II</li><li>Many more</li></ul>
   </div>
 </div>
 

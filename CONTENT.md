@@ -2,8 +2,18 @@
 
 Approved copy and facts for respeclabs.com. The design reference is **Option D** in the Figma file "RespecLabs – Landing Page".
 
-## Credits strip
-Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront II
+## Credits strip ("Inventory loadout")
+Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront II · Many more
+
+## Skill sheet ("Your team, respecced")
+5-segment RPG meters, half segments allowed:
+| Stat | Label | Segments |
+|---|---|---|
+| Design leadership | +40% | 4 |
+| Scope & milestones | +35% | 3.5 |
+| Team structure & hiring | +30% | 3 |
+| Career momentum | +45% | 4.5 |
+| Academic advisory | +35% | 3.5 |
 
 ## Player profile
 | Field | Value |
