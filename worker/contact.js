@@ -1,9 +1,11 @@
 // Respec Labs contact form endpoint (Cloudflare Worker "respeclabs-contact").
 // Bindings (set in Cloudflare, not in this file):
-//   EMAIL            send_email binding, restricted to hello@respeclabs.com
+//   EMAIL            send_email binding, restricted to hello@respeclabs.com (verified destination)
+// Sending uses free Cloudflare Email Routing enabled on the forms.respeclabs.com subdomain only,
+// so the main domain's iCloud mail records are untouched.
 //   TURNSTILE_SECRET secret for the "Respec Labs contact form" Turnstile widget
 const TO = 'hello@respeclabs.com';
-const FROM = { email: 'website@respeclabs.com', name: 'Respec Labs website' };
+const FROM = { email: 'website@forms.respeclabs.com', name: 'Respec Labs website' };
 const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?respeclabs\.com$/, /^https:\/\/([a-z0-9-]+\.)?respeclabs-site\.pages\.dev$/];
 
 function cors(origin) {
