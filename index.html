@@ -142,9 +142,15 @@
   .cta-copy img{height:64px;width:auto}
   .cta h2{margin:0;font-size:52px}
   .cta p{color:#DCE6FF;font-size:18px}
-  .cta-btns{position:relative;display:flex;gap:14px;flex-wrap:wrap}
-  .btn-line{border:1px solid var(--brand-2);color:#fff;background:rgba(10,14,26,.35)}
-  .btn-line:hover{background:rgba(10,14,26,.6)}
+  .contact{position:relative;flex:0 1 480px;display:flex;flex-direction:column;gap:14px;background:rgba(10,14,26,.72);border:1px solid var(--line);border-radius:18px;padding:26px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .contact label{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .contact input,.contact textarea{font:inherit;font-family:Inter,system-ui,sans-serif;font-size:16px;letter-spacing:0;text-transform:none;color:var(--text);background:var(--deep);border:1px solid var(--line);border-radius:10px;padding:12px 14px;resize:vertical}
+  .contact input:focus,.contact textarea:focus{outline:none;border-color:var(--brand-2)}
+  .contact textarea::placeholder{color:#5F6B8C}
+  .form-foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+  .form-foot a{color:var(--brand-2);text-decoration:underline;text-underline-offset:3px}
+  .contact .btn{border:0;cursor:pointer}
 
   /* Footer */
   footer{border-top:1px solid var(--line);padding:64px 0 40px}
@@ -163,7 +169,8 @@
     .profile-sec .wrap{grid-template-columns:1fr;gap:48px}
     .profile{max-width:560px}
     .classes{grid-template-columns:1fr 1fr}
-    .cta-box{flex-direction:column;align-items:flex-start}
+    .cta-box{flex-direction:column;align-items:stretch}
+    .contact{flex-basis:auto}
   }
   @media (max-width:760px){
     :root{--gutter:16px}
@@ -188,6 +195,8 @@
     .step{padding:18px;gap:14px}
     .cta-box{padding:36px 24px;border-radius:20px}
     .cta-copy img{height:46px}
+    .contact{flex-basis:auto;width:100%;padding:20px}
+    .field-row{grid-template-columns:1fr}
     .cta-mark{width:420px;right:-120px}
     .foot-top img{height:54px}
     .foot-links{gap:20px;flex-wrap:wrap}
@@ -204,7 +213,7 @@
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#process">Process</a>
-      <a class="btn btn-primary btn-sm" href="#contact">Book a call</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -217,7 +226,7 @@
       <h1>Level up your <span>next chapter.</span></h1>
       <p class="lead">Consulting, fractional design leadership, and professional coaching for game studios, creative organizations, and individuals.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#contact">Book an intro call →</a>
+        <a class="btn btn-primary" href="#contact">Get in touch →</a>
         <a class="btn btn-ghost" href="#services">See services</a>
       </div>
     </div>
@@ -307,11 +316,17 @@
         <h2>Ready to respec?</h2>
         <p>Let's talk about your studio, your team, or your next career move.</p>
       </div>
-      <div class="cta-btns">
-        <!-- TODO: replace with the new booking link (Cal.com / Calendly) before the domain moves off Squarespace -->
-        <a class="btn btn-primary" href="https://respeclabs.com/appointments">Book a call</a>
-        <a class="btn btn-line" href="https://www.linkedin.com/in/dnanni/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <form class="contact" action="mailto:hello@respeclabs.com" method="post" enctype="text/plain" id="contact-form">
+        <div class="field-row">
+          <label>Name<input name="name" type="text" autocomplete="name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label>Message<textarea name="message" rows="4" required placeholder="Tell me about your studio, team, or goals."></textarea></label>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <span>or email <a href="mailto:hello@respeclabs.com">hello@respeclabs.com</a></span>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -328,5 +343,15 @@
   </div>
 </footer>
 
+<script>
+  // Opens the visitor's email app with the form filled in, addressed to hello@respeclabs.com.
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var subject = 'Respec Labs inquiry from ' + f.name.value.trim();
+    var body = f.message.value.trim() + '\n\n' + f.name.value.trim() + '\n' + f.email.value.trim();
+    window.location.href = 'mailto:hello@respeclabs.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+</script>
 </body>
 </html>

@@ -17,5 +17,5 @@ Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront 
 Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` versions for smaller screens.
 
 ## Contact
+Contact form (name, email, message) opens the visitor's email app addressed to hello@respeclabs.com. No booking/scheduling links.
 LinkedIn: https://www.linkedin.com/in/dnanni/
-Booking link: TBD (the Squarespace scheduler won't carry over)
