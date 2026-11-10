@@ -32,3 +32,6 @@ Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` ver
 ## Contact
 Contact form (name, email, message) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), sent from website@forms.respeclabs.com via free Cloudflare Email Routing on that subdomain only (iCloud keeps the main domain's mail), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
 LinkedIn: https://www.linkedin.com/in/dnanni/
+
+## Footer
+Bottom right: "Made with ♥ and a lot of coffee" (pixel heart, #E8392E, same as the Holy Grawlix footer). Easter-egg link to https://holygrawlix.com/: looks like plain text, turns gold on hover.

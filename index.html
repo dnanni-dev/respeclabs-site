@@ -175,6 +175,11 @@
   .foot-links{display:flex;gap:36px;font-size:15px;font-weight:500;color:var(--muted)}
   .foot-links a:hover{color:var(--text)}
   .foot-bot{display:flex;justify-content:space-between;gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+  .made-with{color:inherit;text-decoration:none;display:inline-flex;align-items:center;transition:color .2s}
+  .made-with:hover,.made-with:focus-visible{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+  .px-heart{display:inline-block;width:14px;height:12px;margin:0 6px;color:#E8392E;transition:transform .2s}
+  .px-heart svg{display:block;width:100%;height:100%;shape-rendering:crispEdges}
+  .made-with:hover .px-heart{transform:scale(1.25)}
 
   a:focus-visible,.btn:focus-visible{outline:2px solid var(--brand-2);outline-offset:3px}
   /* Scroll animations (only when JS runs and motion is allowed; see the head script) */
@@ -387,7 +392,7 @@
         <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="https://www.linkedin.com/in/dnanni/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <div class="foot-bot"><span>©2026 Respec Labs, LLC. All rights reserved.</span><span>respeclabs.com</span></div>
+    <div class="foot-bot"><span>©2026 Respec Labs, LLC. All rights reserved.</span><a class="made-with" href="https://holygrawlix.com/" target="_blank" rel="noopener" title="Holy Grawlix Games">Made with <i class="px-heart" aria-label="love"><svg viewBox="0 0 7 6" fill="currentColor" aria-hidden="true"><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="5" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/></svg></i> and a lot of coffee</a></div>
   </div>
 </footer>
 
