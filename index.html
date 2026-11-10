@@ -108,6 +108,8 @@
   .k-mono{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--muted)}
   .badge{padding:12px;border-radius:10px;background:var(--brand-tint);border:1px solid var(--brand)}
   .badge .mark{width:30px}
+  .badge:has(.sprite){padding:6px}
+  .badge .sprite{width:48px;height:48px;image-rendering:pixelated;display:block}
   .class h3{font-size:28px;line-height:1.2}
   .class p{color:var(--muted);font-size:16px;flex:1}
   .best{display:flex;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px}
@@ -270,11 +272,11 @@
     </div>
     <aside class="sheet" aria-label="Skill sheet">
       <div class="sheet-head"><span class="t"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">Your team, respecced</span><span class="lvl">LVL UP</span></div>
-      <div class="stat"><div class="stat-row"><b>Design leadership</b><span>+40%</span></div><div class="bar" role="img" aria-label="5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Scope &amp; milestones</b><span>+35%</span></div><div class="bar" role="img" aria-label="3 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i><i></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Team structure &amp; hiring</b><span>+30%</span></div><div class="bar" role="img" aria-label="3.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i><i></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Career momentum</b><span>+45%</span></div><div class="bar" role="img" aria-label="4 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i></div></div>
-      <div class="stat"><div class="stat-row"><b>Academic advisory</b><span>+35%</span></div><div class="bar" role="img" aria-label="4.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Design leadership</b><span>5/5</span></div><div class="bar" role="img" aria-label="5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Scope &amp; milestones</b><span>3/5</span></div><div class="bar" role="img" aria-label="3 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Team structure &amp; hiring</b><span>3.5/5</span></div><div class="bar" role="img" aria-label="3.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Career momentum</b><span>4/5</span></div><div class="bar" role="img" aria-label="4 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Academic advisory</b><span>4.5/5</span></div><div class="bar" role="img" aria-label="4.5 of 5"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:0.5"></i></div></div>
       <div class="points"><span>Skill points available</span><b>25+ years</b></div>
     </aside>
   </div>
@@ -299,19 +301,19 @@
     </div>
     <div class="classes">
       <article class="class">
-        <div class="class-top"><span class="k-mono">CLASS 01</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <div class="class-top"><span class="k-mono">CLASS 01</span><span class="badge"><img class="mark sprite" src="assets/classes/wizard.svg" alt="Wizard class icon" width="48" height="48"></span></div>
         <h3>Studio Strategist</h3>
         <p>Design team structure, hiring strategy, project direction, scope and milestone planning, and development advisory.</p>
         <div class="best"><span>BEST FOR</span><b>Studios &amp; dev teams</b></div>
       </article>
       <article class="class">
-        <div class="class-top"><span class="k-mono">CLASS 02</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <div class="class-top"><span class="k-mono">CLASS 02</span><span class="badge"><img class="mark sprite" src="assets/classes/fighter.svg" alt="Fighter class icon" width="48" height="48"></span></div>
         <h3>Interim Leader &amp; Coach</h3>
         <p>Interim design leadership, management development, career advancement, mentorship, and workplace communication.</p>
         <div class="best"><span>BEST FOR</span><b>Leads &amp; professionals</b></div>
       </article>
       <article class="class">
-        <div class="class-top"><span class="k-mono">CLASS 03</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <div class="class-top"><span class="k-mono">CLASS 03</span><span class="badge"><img class="mark sprite" src="assets/classes/rogue.svg" alt="Rogue class icon" width="48" height="48"></span></div>
         <h3>Academy Advisor</h3>
         <p>Game design curriculum development, program consulting, workshops, guest lectures, and career preparation.</p>
         <div class="best"><span>BEST FOR</span><b>Schools &amp; programs</b></div>
@@ -327,10 +329,10 @@
       <div class="portrait">
         <picture>
           <source type="image/webp" srcset="assets/img/dan-nanni-600.webp 600w, assets/img/dan-nanni.webp 1200w" sizes="(max-width:760px) 100vw, 500px">
-          <img src="assets/img/dan-nanni-600.jpg" srcset="assets/img/dan-nanni-600.jpg 600w, assets/img/dan-nanni.jpg 1200w" sizes="(max-width:760px) 100vw, 500px" alt="Dan Nanni" width="600" height="800" loading="lazy">
+          <img src="assets/img/dan-nanni-600.jpg" srcset="assets/img/dan-nanni-600.jpg 600w, assets/img/dan-nanni.jpg 1200w" sizes="(max-width:760px) 100vw, 500px" alt="Daniele Nanni" width="600" height="800" loading="lazy">
         </picture>
       </div>
-      <div class="row"><span>NAME</span><b>Dan Nanni</b></div>
+      <div class="row"><span>NAME</span><b>Daniele Nanni</b></div>
       <div class="row"><span>CLASS</span><b>Creative &amp; Game Director</b></div>
       <div class="row"><span>XP</span><b>25+ years</b></div>
       <div class="row"><span>GUILDS</span><b>Bethesda · EA · Sony · Tencent · Gearbox</b></div>

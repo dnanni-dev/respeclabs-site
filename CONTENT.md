@@ -6,19 +6,22 @@ Approved copy and facts for respeclabs.com. The design reference is **Option D**
 Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront II · Many more
 
 ## Skill sheet ("Your team, respecced")
-5-segment RPG meters, half segments allowed:
-| Stat | Label | Segments |
+5-segment RPG meters, half segments allowed; readout shows the fill as N/5.
+
+Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard, Class 02 fighter, Class 03 rogue.
+
+| Stat | Readout | Segments |
 |---|---|---|
-| Design leadership | +40% | 5 |
-| Scope & milestones | +35% | 3 |
-| Team structure & hiring | +30% | 3.5 |
-| Career momentum | +45% | 4 |
-| Academic advisory | +35% | 4.5 |
+| Design leadership | 5/5 | 5 |
+| Scope & milestones | 3/5 | 3 |
+| Team structure & hiring | 3.5/5 | 3.5 |
+| Career momentum | 4/5 | 4 |
+| Academic advisory | 4.5/5 | 4.5 |
 
 ## Player profile
 | Field | Value |
 |---|---|
-| Name | Dan Nanni |
+| Name | Daniele Nanni |
 | Class | Creative & Game Director |
 | XP | 25+ years |
 | Guilds | Bethesda · EA · Sony · Tencent · Gearbox |
