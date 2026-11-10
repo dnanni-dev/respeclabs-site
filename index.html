@@ -129,6 +129,10 @@
   .row{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
   .row span{color:var(--muted);letter-spacing:.04em;font-weight:500}
   .row b{text-align:right}
+  .row-class{align-items:center}
+  .row-class b{display:inline-flex;align-items:center;gap:12px}
+  .mini-badge{display:inline-block;padding:3px;border-radius:8px;background:var(--brand-tint);border:1px solid var(--brand);flex:none}
+  .mini-badge img{display:block;width:32px;height:32px;image-rendering:pixelated}
   .quest{display:flex;flex-direction:column;gap:24px;padding-top:24px}
   .quest h2{margin:0 0 4px}
   .step{display:flex;gap:20px;align-items:flex-start;padding:22px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
@@ -333,7 +337,7 @@
         </picture>
       </div>
       <div class="row"><span>NAME</span><b>Daniele Nanni</b></div>
-      <div class="row"><span>CLASS</span><b>Creative &amp; Game Director</b></div>
+      <div class="row row-class"><span>CLASS</span><b><span class="mini-badge"><img src="assets/classes/director.svg" alt="" width="32" height="32"></span>Creative &amp; Game Director</b></div>
       <div class="row"><span>XP</span><b>25+ years</b></div>
       <div class="row"><span>GUILDS</span><b>Bethesda · EA · Sony · Tencent · Gearbox</b></div>
       <div class="row"><span>LANGUAGES</span><b>EN / IT</b></div>
