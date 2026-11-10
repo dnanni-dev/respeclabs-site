@@ -8,8 +8,8 @@ const TO = 'hello@respeclabs.com';
 const FROM = { email: 'website@forms.respeclabs.com', name: 'Respec Labs website' };
 const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?respeclabs\.com$/, /^https:\/\/([a-z0-9-]+\.)?respeclabs-site\.pages\.dev$/,
   /^https:\/\/(www\.)?holygrawlix\.com$/, /^https:\/\/([a-z0-9-]+\.)?grawlix-games\.pages\.dev$/];
-// Messages from the Holy Grawlix studio site are tagged in the subject line.
-const siteTag = (origin) => (/holygrawlix|grawlix-games/.test(origin || '') ? '[Holy Grawlix] ' : '');
+// Plain-sentence subject naming the site (no bracketed tags, which can look automated to spam filters).
+const siteName = (origin) => (/holygrawlix|grawlix-games/.test(origin || '') ? 'Holy Grawlix Games' : 'Respec Labs');
 
 function cors(origin) {
   const ok = origin && ALLOWED_ORIGINS.some((re) => re.test(origin));
@@ -44,7 +44,7 @@ export default {
         to: TO,
         from: FROM,
         replyTo: { email, name },
-        subject: `${siteTag(origin)}Website inquiry from ${name}`,
+        subject: `New message from ${name} via the ${siteName(origin)} website`,
         text: `${message}\n\n---\nFrom: ${name} <${email}>\nSent via the contact form on ${origin}`,
       });
     } catch (e) {
