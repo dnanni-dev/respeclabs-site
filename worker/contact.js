@@ -1,4 +1,4 @@
-// Respec Labs contact form endpoint (Cloudflare Worker "respeclabs-contact").
+// Contact form endpoint for respeclabs.com and the Holy Grawlix studio site (Cloudflare Worker "respeclabs-contact").
 // Bindings (set in Cloudflare, not in this file):
 //   EMAIL            send_email binding, restricted to hello@respeclabs.com (verified destination)
 // Sending uses free Cloudflare Email Routing enabled on the forms.respeclabs.com subdomain only,
@@ -6,7 +6,10 @@
 //   TURNSTILE_SECRET secret for the "Respec Labs contact form" Turnstile widget
 const TO = 'hello@respeclabs.com';
 const FROM = { email: 'website@forms.respeclabs.com', name: 'Respec Labs website' };
-const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?respeclabs\.com$/, /^https:\/\/([a-z0-9-]+\.)?respeclabs-site\.pages\.dev$/];
+const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?respeclabs\.com$/, /^https:\/\/([a-z0-9-]+\.)?respeclabs-site\.pages\.dev$/,
+  /^https:\/\/(www\.)?holygrawlix\.com$/, /^https:\/\/([a-z0-9-]+\.)?grawlix-games\.pages\.dev$/];
+// Messages from the Holy Grawlix studio site are tagged in the subject line.
+const siteTag = (origin) => (/holygrawlix|grawlix-games/.test(origin || '') ? '[Holy Grawlix] ' : '');
 
 function cors(origin) {
   const ok = origin && ALLOWED_ORIGINS.some((re) => re.test(origin));
@@ -41,7 +44,7 @@ export default {
         to: TO,
         from: FROM,
         replyTo: { email, name },
-        subject: `Website inquiry from ${name}`,
+        subject: `${siteTag(origin)}Website inquiry from ${name}`,
         text: `${message}\n\n---\nFrom: ${name} <${email}>\nSent via the contact form on ${origin}`,
       });
     } catch (e) {
