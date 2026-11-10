@@ -9,11 +9,11 @@ Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront 
 5-segment RPG meters, half segments allowed:
 | Stat | Label | Segments |
 |---|---|---|
-| Design leadership | +40% | 4 |
-| Scope & milestones | +35% | 3.5 |
-| Team structure & hiring | +30% | 3 |
-| Career momentum | +45% | 4.5 |
-| Academic advisory | +35% | 3.5 |
+| Design leadership | +40% | 5 |
+| Scope & milestones | +35% | 3 |
+| Team structure & hiring | +30% | 3.5 |
+| Career momentum | +45% | 4 |
+| Academic advisory | +35% | 4.5 |
 
 ## Player profile
 | Field | Value |
