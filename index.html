@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respec Labs | It's Time to Level Up</title>
+<meta name="description" content="Respec Labs provides game development consulting, fractional design leadership, professional coaching, and academic advisory for studios, teams, and creative professionals.">
+<link rel="canonical" href="https://respeclabs.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Respec Labs">
+<meta property="og:title" content="Respec Labs | It's Time to Level Up">
+<meta property="og:description" content="Game development consulting, fractional design leadership, and professional coaching for studios, teams, and individuals.">
+<meta property="og:url" content="https://respeclabs.com/">
+<meta property="og:image" content="https://respeclabs.com/assets/logo/with-slogan/png/color-logo-with-background.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/browser.png">
+<link rel="apple-touch-icon" href="assets/favicons/iphone.png">
+<link rel="icon" type="image/png" sizes="196x196" href="assets/favicons/android.png">
+<meta name="theme-color" content="#0A0E1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A; --bg-2:#111729; --card:#151C31; --deep:#0E1426; --line:#243055;
+    --text:#EEF2FF; --muted:#9AA6C6; --soft:#C8D1EA;
+    --brand:#4A86AB; --brand-2:#8DBAD6; --brand-tint:#132A3B; --gold:#FFC24B;
+    --head:"Space Grotesk",Inter,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+    --wrap:1200px; --gutter:32px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:calc(var(--wrap) + var(--gutter)*2);margin:0 auto;padding:0 var(--gutter)}
+  h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em}
+  .mark{display:inline-block;width:28px;height:auto;flex:none}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:999px;font-family:var(--head);font-weight:700;font-size:16px;white-space:nowrap;transition:background .15s,border-color .15s,transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:#5A97BD}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--brand-2)}
+  .btn-sm{height:40px;padding:0 18px;font-size:14px}
+
+  /* Eyebrow */
+  .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-2)}
+  .eyebrow .mark{width:24px}
+  .eyebrow.slogan{letter-spacing:.28em}
+  .eyebrow.slogan .mark{width:30px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(10,14,26,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+  .nav-logo img{height:46px;width:auto}
+  .links{display:flex;align-items:center;gap:36px;font-size:15px;font-weight:500;color:var(--muted)}
+  .links a:not(.btn):hover{color:var(--text)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:96px 0 88px}
+  .hero-mark{position:absolute;right:-220px;bottom:-150px;width:980px;opacity:.07;pointer-events:none}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .hero-copy{display:flex;flex-direction:column;gap:24px}
+  h1{font-size:76px;line-height:1.02}
+  h1 span{color:var(--brand-2)}
+  .lead{font-size:20px;color:var(--muted);max-width:580px}
+  .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+
+  .sheet{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+  .sheet-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:22px}
+  .sheet-head .t{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:18px}
+  .sheet-head .t .mark{width:26px}
+  .lvl{font-family:var(--head);font-size:13px;font-weight:700;color:var(--bg);background:var(--gold);padding:4px 12px;border-radius:999px}
+  .stat{margin-bottom:18px}
+  .stat-row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px}
+  .stat-row b{font-family:var(--head);font-weight:500}
+  .stat-row span{color:var(--muted)}
+  .bar{height:8px;background:var(--deep);border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--brand-2));transform-origin:left;animation:fill 1.2s cubic-bezier(.2,.8,.2,1) both}
+  .stat:nth-child(3) .bar i{animation-delay:.1s}.stat:nth-child(4) .bar i{animation-delay:.2s}.stat:nth-child(5) .bar i{animation-delay:.3s}
+  @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .points{margin-top:24px;display:flex;align-items:center;justify-content:space-between;background:var(--deep);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--muted)}
+  .points b{font-family:var(--head);color:var(--gold);font-size:16px}
+
+  /* Credits */
+  .credits{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .credits .wrap{display:flex;align-items:center;gap:32px;padding-top:30px;padding-bottom:30px}
+  .credits .mark{width:34px}
+  .credits .k{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .credits ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 40px;font-family:var(--head);font-weight:500;font-size:19px;color:var(--soft)}
+
+  /* Sections */
+  section{padding:112px 0}
+  h2{font-size:52px;line-height:1.08;margin-top:14px}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}
+  .sec-head p{color:var(--muted);font-size:18px;max-width:380px}
+
+  /* Classes */
+  .classes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .class{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:18px;transition:border-color .2s,transform .2s}
+  .class:hover{border-color:var(--brand);transform:translateY(-3px)}
+  .class-top{display:flex;justify-content:space-between;align-items:center}
+  .k-mono{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+  .badge{padding:12px;border-radius:10px;background:var(--brand-tint);border:1px solid var(--brand)}
+  .badge .mark{width:30px}
+  .class h3{font-size:28px;line-height:1.2}
+  .class p{color:var(--muted);font-size:16px;flex:1}
+  .best{display:flex;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px}
+  .best span{color:var(--muted);letter-spacing:.04em}
+  .best b{color:var(--gold)}
+
+  /* Profile + quest log */
+  .profile-sec{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .profile-sec .wrap{display:grid;grid-template-columns:500px 1fr;gap:64px;align-items:start}
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .profile-head{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line)}
+  .profile-head b{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--brand-2)}
+  .p1{font-family:var(--mono);font-weight:700;font-size:12px;color:var(--bg);background:var(--gold);padding:3px 10px;border-radius:999px}
+  .portrait{position:relative;aspect-ratio:5/4;background:var(--deep)}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(21,28,49,.55))}
+  .row{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px}
+  .row span{color:var(--muted);letter-spacing:.04em;font-weight:500}
+  .row b{text-align:right}
+  .quest{display:flex;flex-direction:column;gap:24px;padding-top:24px}
+  .quest h2{margin:0 0 4px}
+  .step{display:flex;gap:20px;align-items:flex-start;padding:22px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+  .step.on{background:var(--brand-tint);border-color:var(--brand)}
+  .num{font-family:var(--mono);font-weight:700;font-size:14px;padding:6px 10px;border-radius:6px;background:var(--deep);border:1px solid var(--line);color:var(--muted)}
+  .step.on .num{background:var(--brand);border-color:var(--brand);color:#fff}
+  .step h3{font-size:20px;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15px;margin-top:4px}
+
+  /* CTA */
+  .cta{padding:112px 0}
+  .cta-box{position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:40px;padding:72px;border-radius:28px;border:1px solid var(--brand);background:linear-gradient(90deg,#101A2E,#16324A)}
+  .cta-mark{position:absolute;right:-90px;bottom:-60px;width:620px;opacity:.22;pointer-events:none}
+  .cta-copy{position:relative;display:flex;flex-direction:column;gap:18px}
+  .cta-copy img{height:64px;width:auto}
+  .cta h2{margin:0;font-size:52px}
+  .cta p{color:#DCE6FF;font-size:18px}
+  .cta-btns{position:relative;display:flex;gap:14px;flex-wrap:wrap}
+  .btn-line{border:1px solid var(--brand-2);color:#fff;background:rgba(10,14,26,.35)}
+  .btn-line:hover{background:rgba(10,14,26,.6)}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:64px 0 40px}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+  .foot-top img{height:72px;width:auto}
+  .foot-links{display:flex;gap:36px;font-size:15px;font-weight:500;color:var(--muted)}
+  .foot-links a:hover{color:var(--text)}
+  .foot-bot{display:flex;justify-content:space-between;gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--brand-2);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+  /* Responsive */
+  @media (max-width:1080px){
+    .hero .wrap{grid-template-columns:1fr;gap:48px}
+    .profile-sec .wrap{grid-template-columns:1fr;gap:48px}
+    .profile{max-width:560px}
+    .classes{grid-template-columns:1fr 1fr}
+    .cta-box{flex-direction:column;align-items:flex-start}
+  }
+  @media (max-width:760px){
+    :root{--gutter:16px}
+    body{font-size:16px}
+    nav .wrap{height:68px}
+    .nav-logo img{height:34px}
+    .links a:not(.btn){display:none}
+    .hero{padding:56px 0 64px}
+    .hero-mark{width:620px;right:-200px;bottom:-60px}
+    h1{font-size:46px}
+    .lead{font-size:18px}
+    .sheet{padding:22px}
+    .credits .wrap{flex-direction:column;align-items:flex-start;gap:12px;padding-top:24px;padding-bottom:24px}
+    .credits ul{gap:6px 22px;font-size:17px}
+    section,.cta{padding:72px 0}
+    h2,.cta h2{font-size:36px}
+    .sec-head{flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:32px}
+    .classes{grid-template-columns:1fr}
+    .class{padding:24px}
+    .row{flex-direction:column;gap:2px}
+    .row b{text-align:left}
+    .step{padding:18px;gap:14px}
+    .cta-box{padding:36px 24px;border-radius:20px}
+    .cta-copy img{height:46px}
+    .cta-mark{width:420px;right:-120px}
+    .foot-top img{height:54px}
+    .foot-links{gap:20px;flex-wrap:wrap}
+    .foot-bot{flex-direction:column;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="nav-logo" href="#top" aria-label="Respec Labs home"><img src="assets/logo/no-slogan/svg/color-logo-no-background.svg" alt="Respec Labs" width="227" height="46"></a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="hero-mark" src="assets/logo/symbol/symbol.svg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow slogan"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">It's time to level up</div>
+      <h1>Level up your <span>next chapter.</span></h1>
+      <p class="lead">Consulting, fractional design leadership, and professional coaching for game studios, creative organizations, and individuals.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact">Book an intro call →</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+    </div>
+    <aside class="sheet" aria-label="Skill sheet">
+      <div class="sheet-head"><span class="t"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">Your team, respecced</span><span class="lvl">LVL UP</span></div>
+      <div class="stat"><div class="stat-row"><b>Design leadership</b><span>+40%</span></div><div class="bar"><i style="width:88%"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Scope &amp; milestones</b><span>+35%</span></div><div class="bar"><i style="width:76%"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Team structure &amp; hiring</b><span>+30%</span></div><div class="bar"><i style="width:70%"></i></div></div>
+      <div class="stat"><div class="stat-row"><b>Career momentum</b><span>+45%</span></div><div class="bar"><i style="width:92%"></i></div></div>
+      <div class="points"><span>Skill points available</span><b>25+ years</b></div>
+    </aside>
+  </div>
+</header>
+
+<div class="credits">
+  <div class="wrap">
+    <img class="mark" src="assets/logo/symbol/symbol.svg" alt="">
+    <span class="k">Credits include</span>
+    <ul><li>Starfield</li><li>Fallout 76</li><li>Battlefield 4</li><li>Killzone 3</li><li>Star Wars Battlefront II</li></ul>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">Select your class</div>
+        <h2>Choose your path.</h2>
+      </div>
+      <p>Studios, teams, and individuals each get a build that fits.</p>
+    </div>
+    <div class="classes">
+      <article class="class">
+        <div class="class-top"><span class="k-mono">CLASS 01</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <h3>Studio Strategist</h3>
+        <p>Design team structure, hiring strategy, project direction, scope and milestone planning, and development advisory.</p>
+        <div class="best"><span>BEST FOR</span><b>Studios &amp; dev teams</b></div>
+      </article>
+      <article class="class">
+        <div class="class-top"><span class="k-mono">CLASS 02</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <h3>Interim Leader &amp; Coach</h3>
+        <p>Interim design leadership, management development, career advancement, mentorship, and workplace communication.</p>
+        <div class="best"><span>BEST FOR</span><b>Leads &amp; professionals</b></div>
+      </article>
+      <article class="class">
+        <div class="class-top"><span class="k-mono">CLASS 03</span><span class="badge"><img class="mark" src="assets/logo/symbol/symbol.svg" alt=""></span></div>
+        <h3>Academy Advisor</h3>
+        <p>Game design curriculum development, program consulting, workshops, guest lectures, and career preparation.</p>
+        <div class="best"><span>BEST FOR</span><b>Schools &amp; programs</b></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="profile-sec" id="about">
+  <div class="wrap">
+    <div class="profile">
+      <div class="profile-head"><b>PLAYER_PROFILE</b><span class="p1">P1</span></div>
+      <div class="portrait">
+        <picture>
+          <source type="image/webp" srcset="assets/img/dan-nanni-600.webp 600w, assets/img/dan-nanni.webp 1200w" sizes="(max-width:760px) 100vw, 500px">
+          <img src="assets/img/dan-nanni-600.jpg" srcset="assets/img/dan-nanni-600.jpg 600w, assets/img/dan-nanni.jpg 1200w" sizes="(max-width:760px) 100vw, 500px" alt="Dan Nanni" width="600" height="800" loading="lazy">
+        </picture>
+      </div>
+      <div class="row"><span>NAME</span><b>Dan Nanni</b></div>
+      <div class="row"><span>CLASS</span><b>Creative &amp; Game Director</b></div>
+      <div class="row"><span>XP</span><b>25+ years</b></div>
+      <div class="row"><span>GUILDS</span><b>Bethesda · EA · Sony · Tencent · Gearbox</b></div>
+      <div class="row"><span>LANGUAGES</span><b>EN / IT</b></div>
+    </div>
+    <div class="quest" id="process">
+      <div class="eyebrow"><img class="mark" src="assets/logo/symbol/symbol.svg" alt="">Quest log</div>
+      <h2>How a respec works.</h2>
+      <div class="step on"><span class="num">01</span><div><h3>Intro call</h3><p>A free conversation about where you are, where you want to be, and what's in the way.</p></div></div>
+      <div class="step"><span class="num">02</span><div><h3>Build the plan</h3><p>We map goals, priorities, and a scope of work that fits your team, timeline, and budget.</p></div></div>
+      <div class="step"><span class="num">03</span><div><h3>Level up</h3><p>Hands-on consulting, leadership, or coaching, with regular check-ins to keep progress moving.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <img class="cta-mark" src="assets/logo/symbol/symbol.svg" alt="" aria-hidden="true">
+      <div class="cta-copy">
+        <img src="assets/logo/with-slogan/svg/color-logo-no-background.svg" alt="Respec Labs: It's time to level up" width="300" height="64">
+        <h2>Ready to respec?</h2>
+        <p>Let's talk about your studio, your team, or your next career move.</p>
+      </div>
+      <div class="cta-btns">
+        <!-- TODO: replace with the new booking link (Cal.com / Calendly) before the domain moves off Squarespace -->
+        <a class="btn btn-primary" href="https://respeclabs.com/appointments">Book a call</a>
+        <a class="btn btn-line" href="https://www.linkedin.com/in/dnanni/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <img src="assets/logo/with-slogan/svg/color-logo-no-background.svg" alt="Respec Labs: It's time to level up" width="338" height="72">
+      <div class="foot-links">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#process">Process</a><a href="https://www.linkedin.com/in/dnanni/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="foot-bot"><span>©2026 Respec Labs, LLC. All rights reserved.</span><span>respeclabs.com</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
