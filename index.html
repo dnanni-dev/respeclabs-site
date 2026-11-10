@@ -151,6 +151,14 @@
   .form-foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
   .form-foot a{color:var(--brand-2);text-decoration:underline;text-underline-offset:3px}
   .contact .btn{border:0;cursor:pointer}
+  .contact .btn:disabled{opacity:.7;cursor:default;transform:none}
+  .contact .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .cf-turnstile:empty{display:none}
+  .form-status{font-size:14px;min-height:0}
+  .form-status:empty{display:none}
+  .form-status.ok{color:#9FE0B5}
+  .form-status.err{color:#FF9C8A}
+  .form-status.warn{color:var(--gold)}
 
   /* Footer */
   footer{border-top:1px solid var(--line);padding:64px 0 40px}
@@ -226,6 +234,7 @@
     .foot-bot{flex-direction:column;gap:6px}
   }
 </style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   // Turn on scroll animations only if the visitor hasn't asked for reduced motion.
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
@@ -343,16 +352,19 @@
         <h2>Ready to respec?</h2>
         <p>Let's talk about your studio, your team, or your next career move.</p>
       </div>
-      <form class="contact" action="mailto:hello@respeclabs.com" method="post" enctype="text/plain" id="contact-form">
+      <form class="contact" id="contact-form" novalidate>
         <div class="field-row">
-          <label>Name<input name="name" type="text" autocomplete="name" required></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Name<input name="name" type="text" autocomplete="name" maxlength="100" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" maxlength="200" required></label>
         </div>
-        <label>Message<textarea name="message" rows="4" required placeholder="Tell me about your studio, team, or goals."></textarea></label>
+        <label>Message<textarea name="message" rows="4" maxlength="5000" required placeholder="Tell me about your studio, team, or goals."></textarea></label>
+        <label class="hp" aria-hidden="true">Company<input name="company" type="text" tabindex="-1" autocomplete="off"></label>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAF66YpJLXZhi7pvC" data-theme="dark" data-size="flexible" data-appearance="interaction-only"></div>
         <div class="form-foot">
           <button class="btn btn-primary" type="submit">Send message</button>
           <span>or email <a href="mailto:hello@respeclabs.com">hello@respeclabs.com</a></span>
         </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -371,14 +383,39 @@
 </footer>
 
 <script>
-  // Opens the visitor's email app with the form filled in, addressed to hello@respeclabs.com.
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = e.target;
-    var subject = 'Respec Labs inquiry from ' + f.name.value.trim();
-    var body = f.message.value.trim() + '\n\n' + f.name.value.trim() + '\n' + f.email.value.trim();
-    window.location.href = 'mailto:hello@respeclabs.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
+  // Contact form: sends straight from the site via the respeclabs-contact Cloudflare Worker (see worker/contact.js).
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = form.querySelector('.form-status');
+    var btn = form.querySelector('button[type=submit]');
+    var ENDPOINT = 'https://respeclabs-contact.dan-nanni.workers.dev/';
+    function say(msg, kind) { status.textContent = msg; status.className = 'form-status ' + (kind || ''); }
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var token = (form.querySelector('[name="cf-turnstile-response"]') || {}).value || '';
+      if (!token) { say('One moment, running a quick spam check. Press Send again in a second.', 'warn'); return; }
+      btn.disabled = true; btn.textContent = 'Sending…'; say('');
+      try {
+        var res = await fetch(ENDPOINT, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value, company: form.company.value, token: token })
+        });
+        var out = await res.json().catch(function () { return {}; });
+        if (res.ok && out.ok) {
+          form.reset(); say("Thanks! Your message is on its way. I'll get back to you soon.", 'ok');
+          btn.textContent = 'Sent ✓';
+          return;
+        }
+        throw new Error(out.error || 'Send failed');
+      } catch (err) {
+        say((err && err.message && err.message !== 'Failed to fetch' ? err.message + ' ' : '') + 'You can also email hello@respeclabs.com directly.', 'err');
+        btn.disabled = false; btn.textContent = 'Send message';
+      } finally {
+        if (window.turnstile) window.turnstile.reset();
+      }
+    });
+  })();
 
   // Scroll animations: elements fade/slide in, bar marks grow, and the XP numbers count up.
   (function () {

@@ -17,5 +17,5 @@ Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront 
 Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` versions for smaller screens.
 
 ## Contact
-Contact form (name, email, message) opens the visitor's email app addressed to hello@respeclabs.com. No booking/scheduling links.
+Contact form (name, email, message) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
 LinkedIn: https://www.linkedin.com/in/dnanni/
