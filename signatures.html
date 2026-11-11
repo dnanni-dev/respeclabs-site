@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Email signatures | Respec Labs</title>
+<style>
+  body{margin:0;padding:32px 16px;background:#F2F2F2;color:#0A0E1A;font-family:Inter,system-ui,sans-serif}
+  main{max-width:720px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}
+  p.note{color:#4a5368;margin:0 0 28px;font-size:15px;line-height:1.5}
+  section{background:#fff;border:1px solid #d9dde6;border-radius:12px;padding:20px;margin-bottom:20px}
+  h2{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#4a5368;margin:0 0 14px}
+  .sig{display:inline-block;padding:8px;border:1px dashed #b9c0cf;border-radius:6px;background:#fff}
+  button{margin-left:12px;vertical-align:top;font:600 14px Inter,system-ui,sans-serif;padding:10px 16px;border-radius:8px;border:0;background:#4A86AB;color:#fff;cursor:pointer}
+  button.done{background:#2e7d4f}
+</style>
+</head>
+<body>
+<main>
+  <h1>Email signatures</h1>
+  <p class="note">Click <b>Copy</b>, then paste into the signature editor of your mail app (normal editor, not HTML mode). The images stay linked to these files, so updating a file updates every signature.</p>
+
+  <section>
+    <h2>Respec Labs · hello@respeclabs.com</h2>
+    <div class="sig" id="sig-respec"><a href="https://respeclabs.com"><img src="https://respeclabs.com/assets/email/email-signature-respeclabs-sm@2x.png" width="301" height="90" alt="Daniele Nanni · Respec Labs · hello@respeclabs.com" style="display:block;border:0"></a></div><button type="button" data-copy="sig-respec">Copy</button>
+  </section>
+
+  <section>
+    <h2>Holy Grawlix Games · hello@holygrawlix.com</h2>
+    <div class="sig" id="sig-grawlix"><a href="https://holygrawlix.com"><img src="https://holygrawlix.com/brand/logo/email/email-signature-holygrawlix-sm@2x.png" width="276" height="90" alt="Daniele Nanni · Holy Grawlix Games · hello@holygrawlix.com" style="display:block;border:0"></a></div><button type="button" data-copy="sig-grawlix">Copy</button>
+  </section>
+
+  <section>
+    <h2>Roamcoming · trips@roamcoming.com</h2>
+    <div class="sig" id="sig-roam"><a href="https://roamcoming.com"><img src="https://roamcoming.com/brand/lockups/email-signature-daniele-sm@2x.png" width="275" height="90" alt="Daniele Nanni · Roamcoming · trips@roamcoming.com" style="display:block;border:0"></a></div><button type="button" data-copy="sig-roam">Copy</button>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', async function () {
+      var el = document.getElementById(btn.dataset.copy);
+      var html = el.innerHTML;
+      try {
+        await navigator.clipboard.write([new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([el.querySelector('img').alt], { type: 'text/plain' })
+        })]);
+      } catch (e) {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        document.execCommand('copy'); s.removeAllRanges();
+      }
+      btn.textContent = 'Copied'; btn.classList.add('done');
+      setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 2000);
+    });
+  });
+</script>
+</body>
+</html>
