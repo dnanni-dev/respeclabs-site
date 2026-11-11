@@ -1,15 +1,18 @@
 // Contact form endpoint for respeclabs.com and the Holy Grawlix studio site (Cloudflare Worker "respeclabs-contact").
 // Bindings (set in Cloudflare, not in this file):
-//   EMAIL            send_email binding, restricted to hello@respeclabs.com (verified destination)
-// Sending uses free Cloudflare Email Routing enabled on the forms.respeclabs.com subdomain only,
-// so the main domain's iCloud mail records are untouched.
+//   EMAIL            send_email binding, allowed destinations hello@respeclabs.com and hello@holygrawlix.com
+//                    (both verified destinations in Cloudflare Email Routing)
+// Sent from website@forms.respeclabs.com via free Cloudflare Email Routing. Both inboxes forward to
+// the business Gmail, where each site's mail is labelled by its address.
 //   TURNSTILE_SECRET secret for the "Respec Labs contact form" Turnstile widget
-const TO = 'hello@respeclabs.com';
 const FROM = { email: 'website@forms.respeclabs.com', name: 'Respec Labs website' };
 const ALLOWED_ORIGINS = [/^https:\/\/(www\.)?respeclabs\.com$/, /^https:\/\/([a-z0-9-]+\.)?respeclabs-site\.pages\.dev$/,
   /^https:\/\/(www\.)?holygrawlix\.com$/, /^https:\/\/([a-z0-9-]+\.)?grawlix-games\.pages\.dev$/];
 // Plain-sentence subject naming the site (no bracketed tags, which can look automated to spam filters).
-const siteName = (origin) => (/holygrawlix|grawlix-games/.test(origin || '') ? 'Holy Grawlix Games' : 'Respec Labs');
+const isGrawlix = (origin) => /holygrawlix|grawlix-games/.test(origin || '');
+const siteName = (origin) => (isGrawlix(origin) ? 'Holy Grawlix Games' : 'Respec Labs');
+// Each site's enquiries go to its own address.
+const toFor = (origin) => (isGrawlix(origin) ? 'hello@holygrawlix.com' : 'hello@respeclabs.com');
 
 function cors(origin) {
   const ok = origin && ALLOWED_ORIGINS.some((re) => re.test(origin));
@@ -41,7 +44,7 @@ export default {
 
     try {
       await env.EMAIL.send({
-        to: TO,
+        to: toFor(origin),
         from: FROM,
         replyTo: { email, name },
         subject: `New message from ${name} via the ${siteName(origin)} website`,

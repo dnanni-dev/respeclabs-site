@@ -30,7 +30,7 @@ Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard,
 Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` versions for smaller screens.
 
 ## Contact
-Contact form (name, email, message) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), sent from website@forms.respeclabs.com via free Cloudflare Email Routing on that subdomain only (iCloud keeps the main domain's mail), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
+Contact form (name, email, message) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), sent from website@forms.respeclabs.com via free Cloudflare Email Routing (hello@ forwards to the business Gmail; the same Worker sends Holy Grawlix enquiries to hello@holygrawlix.com), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
 LinkedIn: https://www.linkedin.com/in/dnanni/
 
 ## Player profile LinkedIn row
