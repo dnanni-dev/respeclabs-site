@@ -38,3 +38,6 @@ PARTY INVITE: "Connect on LinkedIn ↗" in gold with the LinkedIn logo, both lin
 
 ## Footer
 Bottom right: "Made with ♥ and a lot of coffee" (pixel heart, #E8392E, same as the Holy Grawlix footer). Easter-egg link to https://holygrawlix.com/: looks like plain text, turns gold on hover.
+
+## Icons
+Root `/favicon.ico` (16/32/48) and `/apple-touch-icon.png` (180) exist because Safari (iPad/iPhone) requests them directly. `404.html` keeps missing files returning a real 404 instead of the homepage.
