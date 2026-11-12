@@ -16,3 +16,10 @@ The bar mark is five bars in a "rising build": filled to 20, 45, 30, 75 and 100%
 `assets/email/` holds the personal email signature (600x150, plus `@2x`).
 
 `assets/favicons/` holds the browser, iPhone and Android icons.
+
+## SEO
+
+- `index.html` head: keyword title and description, Open Graph/Twitter tags with `assets/social/og-image.png` (1200x630), and JSON-LD for Respec Labs (ProfessionalService with its three services), Daniele Nanni (Person), the website and the page. No address or city, on purpose.
+- `robots.txt` allows every crawler, including AI answer engines, and points to `sitemap.xml`. Update `<lastmod>` in `sitemap.xml` when the page content changes.
+- `llms.txt` is a plain-text summary for AI search tools.
+- `signatures.html` and `404.html` are `noindex` and left out of the sitemap.

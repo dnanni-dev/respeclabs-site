@@ -1,0 +1,5 @@
+# respeclabs.com: all crawlers welcome, including search and AI answer engines.
+User-agent: *
+Allow: /
+
+Sitemap: https://respeclabs.com/sitemap.xml
