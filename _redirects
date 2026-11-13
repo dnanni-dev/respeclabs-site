@@ -1,0 +1,3 @@
+# Short, unlisted booking links that forward to Cal.com (temporary redirects, so the targets can change later)
+/intro      https://cal.com/respeclabs/intro                           302
+/coaching   https://cal.com/respeclabs/mentoring-and-coaching-session  302

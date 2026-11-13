@@ -23,3 +23,7 @@ The bar mark is five bars in a "rising build": filled to 20, 45, 30, 75 and 100%
 - `robots.txt` allows every crawler, including AI answer engines, and points to `sitemap.xml`. Update `<lastmod>` in `sitemap.xml` when the page content changes.
 - `llms.txt` is a plain-text summary for AI search tools.
 - `signatures.html` and `404.html` are `noindex` and left out of the sitemap.
+
+## Booking links
+
+`_redirects` (Cloudflare Pages) forwards `respeclabs.com/intro` and `respeclabs.com/coaching` to the hidden Cal.com booking links. They are not linked from the site or listed in the sitemap; they're for sharing with people who reach out.
