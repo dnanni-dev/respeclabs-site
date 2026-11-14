@@ -24,7 +24,7 @@ Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard,
 | Name | Daniele Nanni |
 | Class | Creative & Game Director |
 | XP | 25+ years |
-| Guilds | Bethesda · EA · Sony · Tencent · Gearbox |
+| Guilds | Bethesda · EA · Sony · Tencent · Gearbox · Microsoft |
 | Languages | EN / IT |
 
 Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` versions for smaller screens.
