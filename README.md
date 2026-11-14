@@ -26,4 +26,4 @@ The bar mark is five bars in a "rising build": filled to 20, 45, 30, 75 and 100%
 
 ## Booking links
 
-`_redirects` (Cloudflare Pages) forwards `respeclabs.com/intro` and `respeclabs.com/coaching` to the hidden Cal.com booking links. They are not linked from the site or listed in the sitemap; they're for sharing with people who reach out.
+`intro.html` and `coaching.html` serve `respeclabs.com/intro` and `respeclabs.com/coaching`. Each page carries its own link-preview card (title, description, and `assets/social/og-intro.png` / `og-coaching.png`) and then sends visitors straight on to the hidden Cal.com booking link. To change where a link goes, edit the URL in that page's `meta refresh`, `location.replace` and fallback link. They are not linked from the site or listed in the sitemap; they're for sharing with people who reach out.
