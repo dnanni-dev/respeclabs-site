@@ -1,6 +1,6 @@
 # Respec Labs
 
-> Respec Labs (respeclabs.com) is a game development consultancy founded by Daniele Nanni, a creative and game director with 25+ years in the games industry. It offers game studio consulting, fractional (interim) design leadership, career coaching, academic advisory for game design programs, and one-on-one career mentoring for students and recent graduates. Tagline: "It's time to level up."
+> Respec Labs (respeclabs.com) is a game development consultancy founded by Daniele Nanni, a creative and game director with 25+ years in the games industry. It offers game studio consulting, fractional (interim) design leadership, career coaching for professionals, academic advisory for game design schools and programs, and mentoring for students and recent graduates. Tagline: "It's time to level up."
 
 ## Founder
 - Daniele Nanni (Dan Nanni), Founder & Principal Consultant
@@ -10,10 +10,10 @@
 - LinkedIn: https://www.linkedin.com/in/dnanni/
 
 ## Services
-- Studio Strategist (for studios and dev teams): design team structure, hiring strategy, project direction, scope and milestone planning, development advisory
-- Interim Leader & Coach (for leads and professionals): interim design leadership, management development, career advancement, mentorship, workplace communication
-- Academy Advisor (for schools and programs): game design curriculum development, program consulting, workshops, guest lectures, career preparation
-- Career Mentor (for students and new grads): one-on-one career path advice, job search strategy, portfolio, website, résumé reviews, and interview prep, drawing on Daniele's years as a hiring manager and educator
+- Studio Strategist (for studios and dev teams): consulting and fractional design leadership, including team structure, hiring strategy, project direction, scope and milestone planning, and interim leadership
+- Pro Coach (for working and between-jobs professionals): next-role and promotion strategy, leadership growth, résumé and portfolio reviews, interview prep
+- Academy Advisor (for schools and programs): curriculum advising, program consulting, workshops, guest lectures
+- Student Mentor (for students and new grads, at a student rate): academic and career direction, project and portfolio feedback, getting hire-ready with résumé reviews and interview prep
 
 ## How engagements work
 1. Free intro call
