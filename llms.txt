@@ -1,6 +1,6 @@
 # Respec Labs
 
-> Respec Labs (respeclabs.com) is a game development consultancy founded by Daniele Nanni, a creative and game director with 25+ years in the games industry. It offers game studio consulting, fractional (interim) design leadership, career coaching, and academic advisory for game design programs. Tagline: "It's time to level up."
+> Respec Labs (respeclabs.com) is a game development consultancy founded by Daniele Nanni, a creative and game director with 25+ years in the games industry. It offers game studio consulting, fractional (interim) design leadership, career coaching, academic advisory for game design programs, and one-on-one career mentoring for students and recent graduates. Tagline: "It's time to level up."
 
 ## Founder
 - Daniele Nanni (Dan Nanni), Founder & Principal Consultant
@@ -13,11 +13,12 @@
 - Studio Strategist (for studios and dev teams): design team structure, hiring strategy, project direction, scope and milestone planning, development advisory
 - Interim Leader & Coach (for leads and professionals): interim design leadership, management development, career advancement, mentorship, workplace communication
 - Academy Advisor (for schools and programs): game design curriculum development, program consulting, workshops, guest lectures, career preparation
+- Rookie Mentor (for students and new grads): one-on-one career path advice, job search strategy, portfolio, website, and résumé reviews, and interview prep, drawing on Daniele's years as a hiring manager and educator
 
 ## How engagements work
 1. Free intro call
 2. A plan with goals, priorities, and a scope of work that fits the team, timeline, and budget
-3. Hands-on consulting, leadership, or coaching with regular check-ins
+3. Hands-on consulting, leadership, coaching, or mentoring with regular check-ins
 
 ## Contact
 - Email: hello@respeclabs.com

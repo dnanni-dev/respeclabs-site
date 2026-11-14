@@ -8,7 +8,7 @@ Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront 
 ## Skill sheet ("Your team, respecced")
 5-segment RPG meters, half segments allowed; readout shows the fill as N/5.
 
-Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard, Class 02 fighter, Class 03 rogue. The player profile CLASS row shows `director.svg`, a sprite of Daniele (swept hair, tortoiseshell glasses, grey beard, dark tee, game controller).
+Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard, Class 02 fighter, Class 03 rogue, Class 04 cleric (Rookie Mentor: students and new grads). The player profile CLASS row shows `director.svg`, a sprite of Daniele (swept hair, tortoiseshell glasses, grey beard, dark tee, game controller).
 
 | Stat | Readout | Segments |
 |---|---|---|
@@ -30,7 +30,7 @@ Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard,
 Photo: `assets/img/dan-nanni.jpg` (1200px), with `dan-nanni-600` and `.webp` versions for smaller screens.
 
 ## Contact
-Contact form (name, email, message) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), sent from website@forms.respeclabs.com via free Cloudflare Email Routing (hello@ forwards to the business Gmail; the same Worker sends Holy Grawlix enquiries to hello@holygrawlix.com), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
+Contact form (name, email, an "I'm interested in" dropdown with one option per class plus "Something else", and message; the choice goes in the email subject) sends directly from the site to hello@respeclabs.com through the `respeclabs-contact` Cloudflare Worker (`worker/contact.js`), sent from website@forms.respeclabs.com via free Cloudflare Email Routing (hello@ forwards to the business Gmail; the same Worker sends Holy Grawlix enquiries to hello@holygrawlix.com), with Cloudflare Turnstile spam protection and the sender set as reply-to. The email address is also shown as a plain mailto link. No booking/scheduling links.
 LinkedIn: https://www.linkedin.com/in/dnanni/
 
 ## Player profile LinkedIn row

@@ -34,6 +34,7 @@ export default {
     if (data.company) return json({ ok: true }, 200, h); // honeypot: bots fill the hidden field
 
     const name = clean(data.name, 100), email = clean(data.email, 200), message = clean(data.message, 5000);
+    const topic = clean(data.topic, 80); // optional: the respeclabs.com form's "I'm interested in" dropdown
     if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ ok: false, error: 'Please fill in your name, a valid email, and a message.' }, 400, h);
 
     const ts = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -47,8 +48,8 @@ export default {
         to: toFor(origin),
         from: FROM,
         replyTo: { email, name },
-        subject: `New message from ${name} via the ${siteName(origin)} website`,
-        text: `${message}\n\n---\nFrom: ${name} <${email}>\nSent via the contact form on ${origin}`,
+        subject: topic ? `New message from ${name} about ${topic} via the ${siteName(origin)} website` : `New message from ${name} via the ${siteName(origin)} website`,
+        text: `${topic ? `Interested in: ${topic}\n\n` : ''}${message}\n\n---\nFrom: ${name} <${email}>\nSent via the contact form on ${origin}`,
       });
     } catch (e) {
       console.log('send failed', e && (e.code || e.message));
