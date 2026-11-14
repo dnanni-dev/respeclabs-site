@@ -8,7 +8,7 @@ Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront 
 ## Skill sheet ("Your team, respecced")
 5-segment RPG meters, half segments allowed; readout shows the fill as N/5.
 
-Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard, Class 02 fighter, Class 03 rogue, Class 04 cleric (Rookie Mentor: students and new grads). The player profile CLASS row shows `director.svg`, a sprite of Daniele (swept hair, tortoiseshell glasses, grey beard, dark tee, game controller).
+Class card icons are 16×16 pixel sprites in `assets/classes/`: Class 01 wizard, Class 02 fighter, Class 03 rogue, Class 04 cleric (Career Mentor: students and new grads). The player profile CLASS row shows `director.svg`, a sprite of Daniele (swept hair, tortoiseshell glasses, grey beard, dark tee, game controller).
 
 | Stat | Readout | Segments |
 |---|---|---|
