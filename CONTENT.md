@@ -3,7 +3,7 @@
 Approved copy and facts for respeclabs.com. The design reference is **Option D** in the Figma file "RespecLabs – Landing Page".
 
 ## Credits strip ("Inventory loadout")
-Starfield · Fallout 76 · The Elder Scrolls · Battlefield 4 · Killzone 3 · Star Wars Battlefront II · Many more
+Starfield · Fallout 76 · Battlefield 4 · Killzone 3 · Star Wars Battlefront II · Many more
 
 ## Skill sheet ("Your team, respecced")
 5-segment RPG meters, half segments allowed; readout shows the fill as N/5.
