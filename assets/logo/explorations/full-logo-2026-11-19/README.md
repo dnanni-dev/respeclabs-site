@@ -22,3 +22,10 @@ source/build2.py regenerates the SVGs (needs svgpathtools).
 7. Version 4's R (slanted serif + matching slanted foot) with every slanted letter end (E, S, C, L) squared to 90°.
 The R's angled cuts are now the only angles in the word, so the mark stands out as intentional and dynamic (Dan).
 The A's legs and the R's leg keep their angles (structure, not end cuts).
+
+## final-v7/ (refined)
+Version 7 with the word space between RESPEC and LABS. RESPEC and the R bowl are white (#FFFFFF), LABS is gray (#999999).
+- respeclabs-v7-logo-*: full logo (3000px PNG + SVG)
+- respeclabs-v7-logo-slogan-*: full logo with "IT'S TIME TO LEVEL UP" in gray, set to the logo's width
+- respeclabs-v7-r-mark-*: standalone R mark (1024px square PNG + SVG)
+Each comes with-background (#100F16) and no-background (transparent).
