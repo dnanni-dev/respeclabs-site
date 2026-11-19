@@ -7,7 +7,9 @@ Source for [respeclabs.com](https://respeclabs.com), hosted on Cloudflare.
 `assets/logo/` holds the official Respec Labs logo package:
 
 - `with-slogan/` and `no-slogan/`, each with `svg/` (preferred for the web), `png/` and `pdf/`
-- variants: `color-logo-no-background` (white text, blue bars, for dark backgrounds), `white-logo-no-background`, `black-logo-no-background` (for light backgrounds), `color-logo-with-background`
+- variants: `color-logo-no-background` (white RESPEC, gray LABS, for dark backgrounds), `white-logo-no-background`, `black-logo-no-background` (one color, empty bar parts at 32%), `color-logo-with-background`; `light/` holds `navy-logo-no-background` (navy RESPEC, gray LABS, orange serif) for light backgrounds
+- Logo design (v7, Nov 19, 2026): the R is built from the bars (gold serif on top, four blue bars as the stem, angled serif and foot); the other letters have squared ends. Slogan is Rajdhani Bold, outlined, right-aligned from the first E to the last S. Source files and build notes in `explorations/full-logo-2026-11-19/final-v7/`
+- `avatar/` holds the v7 R mark on its own (dark and light, with and without a square background); favicons and email signatures use it
 - `symbol/` is the bar mark on its own (`symbol.svg`, in the logo steel blue #4A86AB)
 
 The bar mark is five bars in a "rising build": filled to 20, 45, 30, 75 and 100% from left to right, so it reads as progress. The empty part of each bar is the same color at 32% opacity (no cross-hatching), with a small gap above each fill. Every logo file, the favicons and the email signatures use this mark.
