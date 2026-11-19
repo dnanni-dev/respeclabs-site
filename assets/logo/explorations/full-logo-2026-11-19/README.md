@@ -26,6 +26,6 @@ The A's legs and the R's leg keep their angles (structure, not end cuts).
 ## final-v7/ (refined)
 Version 7 with the word space between RESPEC and LABS. RESPEC and the R bowl are white (#FFFFFF), LABS is gray (#999999).
 - respeclabs-v7-logo-*: full logo (3000px PNG + SVG)
-- respeclabs-v7-logo-slogan-*: full logo with "IT'S TIME TO LEVEL UP" in gray, starting under the end of the R foot's angled cut and running to the right edge
+- respeclabs-v7-logo-slogan-*: full logo with "IT'S TIME TO LEVEL UP" in gray, starting under the end of the R foot's angled cut and centered under the logo (equal inset on the right)
 - respeclabs-v7-r-mark-*: standalone R mark (1024px square PNG + SVG)
 Each comes with-background (#100F16) and no-background (transparent).
