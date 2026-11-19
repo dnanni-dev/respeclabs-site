@@ -17,3 +17,8 @@ Open points from the critique: pick one angle system (5 matches the typeface and
 choose the foot for large sizes (it vanishes small), darken the light version's orange to ~#C46F00 for contrast.
 
 source/build2.py regenerates the SVGs (needs svgpathtools).
+
+## Nov 19 update: version 7 is the front-runner (Dan's choice)
+7. Version 4's R (slanted serif + matching slanted foot) with every slanted letter end (E, S, C, L) squared to 90°.
+The R's angled cuts are now the only angles in the word, so the mark stands out as intentional and dynamic (Dan).
+The A's legs and the R's leg keep their angles (structure, not end cuts).

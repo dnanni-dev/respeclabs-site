@@ -64,10 +64,11 @@ def svg(inner,vb,bg=None):
 gap_orig=9.3-8.28
 from retilt import retilt
 rest6,nchg=retilt(rest,(sw-trw)/th); print('re-angled cuts:',nchg)
+rest7,n7=retilt(rest,0.0); print('squared cuts:',n7)
 out={}
-for key,top,foot in [('A1_slant_curve','slant','curve'),('A2_cut45_curve','cut45','curve'),('A3_cut45_cut45','cut45','cut'),('A4_slant_slant','slant','slant'),('A5_e_e','e','e'),('A5b_estem_e','e-stem','e'),('A6_slant_all','slant','slant')]:
+for key,top,foot in [('A1_slant_curve','slant','curve'),('A2_cut45_curve','cut45','curve'),('A3_cut45_cut45','cut45','cut'),('A4_slant_slant','slant','slant'),('A5_e_e','e','e'),('A5b_estem_e','e-stem','e'),('A6_slant_all','slant','slant'),('A7_slant_square','slant','slant')]:
     o,right=rmark(0,top=top,foot=foot); shift=right+gap_orig-RB[0]
-    word=rest6 if key.startswith('A6') else rest
+    word=rest6 if key.startswith('A6') else (rest7 if key.startswith('A7') else rest)
     out[key]=(o+f'<path d="{word}" fill="{P["wh"]}" transform="translate({shift:.4f},0)"/>',(0,5.5,RB[1]+shift,14.5))
 for k,(inner,vb) in out.items():
     x,y,w,h=vb; pad=max(w,h)*0.08
